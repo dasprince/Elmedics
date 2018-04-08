@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorLogin">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="360dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/loginlogo" />
+
+    <TextView
+        android:id="@+id/tvloginnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="167dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Enter your mobile number" />
+
+    <EditText
+        android:id="@+id/etmobilenumlogin"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvloginnum"
+        android:layout_alignStart="@+id/tvloginnum"
+        android:ems="10"
+        android:hint="Mobile number"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/tvpasswordlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etmobilenumlogin"
+        android:layout_alignStart="@+id/tvloginnum"
+        android:text="Enter your password" />
+
+    <EditText
+        android:id="@+id/etpasswordlogin"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvpasswordlogin"
+        android:layout_alignStart="@+id/tvloginnum"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnlogindoc"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="226dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:text="Login" />
+
+</RelativeLayout>

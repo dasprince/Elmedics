@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    tools:context=".Signup">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/signuplogo" />
+
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="146dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="-146dp"
+        android:layout_above="@+id/etname"
+        android:layout_alignParentStart="true"
+        android:text="Enter your name" />
+
+    <EditText
+        android:id="@+id/etemail"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvemail"
+        android:layout_alignStart="@+id/etname"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/tvemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etname"
+        android:layout_alignStart="@+id/etname"
+        android:text="Enter your email" />
+
+    <TextView
+        android:id="@+id/tvmobilenum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etemail"
+        android:layout_alignStart="@+id/etname"
+        android:text="Enter your mobile number" />
+
+    <EditText
+        android:id="@+id/etmobilenum"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etname"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Mobile number"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/tvpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etmobilenum"
+        android:layout_alignStart="@+id/etname"
+        android:text="Enter your password" />
+
+    <EditText
+        android:id="@+id/etpassword"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvpassword"
+        android:layout_alignStart="@+id/etname"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tvconfpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etpassword"
+        android:layout_alignStart="@+id/etname"
+        android:text="Enter your password again" />
+
+    <EditText
+        android:id="@+id/etconfpass"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvconfpass"
+        android:layout_alignStart="@+id/etname"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="79dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="SignUp" />
+
+    <TextView
+        android:id="@+id/tvorlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="or Login"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
+
+</RelativeLayout>
