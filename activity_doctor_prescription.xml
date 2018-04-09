@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorPrescription">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Prescription"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/etpatientnum"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="117dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Patient's Mobile number"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-117dp"
+        android:layout_above="@+id/etpatientnum"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:text="Enter Patient's mobile number" />
+
+    <Button
+        android:id="@+id/btnpatientsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etpatientnum"
+        android:layout_centerHorizontal="true"
+        android:text="Search" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:layout_alignParentTop="true"
+        android:text="Enter medicine name" />
+
+    <EditText
+        android:id="@+id/etmedname"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView7"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:ems="10"
+        android:hint="Medicine name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etmedname"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:text="How many times a day?" />
+
+    <EditText
+        android:id="@+id/ettimesaday"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:ems="10"
+        android:hint="Dozes"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ettimesaday"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:text="Comments" />
+
+    <EditText
+        android:id="@+id/etcomments"
+        android:layout_width="311dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignStart="@+id/etpatientnum"
+        android:ems="10"
+        android:hint="comments"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btnsubmitprescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:enabled="false"
+        android:text="Submit Prescription" />
+
+</RelativeLayout>
