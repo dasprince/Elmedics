@@ -17,11 +17,29 @@ public class DoctorHome extends AppCompatActivity  {
         doctorname.setText(docname);
 
         ImageView prescription = (ImageView)findViewById(R.id.ivprescriptiondoc);
+        ImageView viewpatient = (ImageView)findViewById(R.id.viewpatientiv);
+        ImageView myprofile = (ImageView)findViewById(R.id.ivmyprofile);
 
         prescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DoctorHome.this , DoctorPrescription.class));
+                finish();
+            }
+        });
+
+        viewpatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DoctorHome.this,ViewPatient.class));
+                finish();
+            }
+        });
+
+        myprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DoctorHome.this , MyProfileDoctor.class));
                 finish();
             }
         });

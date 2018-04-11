@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,14 +21,14 @@ public class ViewPatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_patient);
 
-        //final SearchView svpat = (SearchView)findViewById(R.id.svpatient);
-        final EditText searchpat = (EditText)findViewById(R.id.etmblnumpatdoc);
+        final EditText mblnum = (EditText)findViewById(R.id.etpatmblnumdoc);
 
         final TextView name = (TextView)findViewById(R.id.tvpatnamedoc);
-        final TextView email = (TextView)findViewById(R.id.tvemailpatdoc);
-        final TextView mobile = (TextView)findViewById(R.id.tvmblnumpatdoc);
+        final TextView email = (TextView)findViewById(R.id.tvpatemaildoc);
+        final TextView mobilenumber = (TextView)findViewById(R.id.tvpatmblnumdoc);
+        final TextView prescription = (TextView)findViewById(R.id.tvpatpresdoc);
 
-        Button search = (Button)findViewById(R.id.btnsearchdetails);
+        final Button search = (Button)findViewById(R.id.btnsearchpatdoc);
 
         FirebaseDatabase firebase = FirebaseDatabase.getInstance();
         final DatabaseReference myref = firebase.getReference();
@@ -37,23 +36,31 @@ public class ViewPatient extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(searchpat.getText().toString().matches("")){
-                    Toast.makeText(ViewPatient.this,"Please enter mobile number",Toast.LENGTH_SHORT)
-                            .show();
+                if(mblnum.getText().toString().matches("")){
+                    Toast.makeText(ViewPatient.this ,"Please enter patient's mobile number",
+                            Toast.LENGTH_SHORT).show();
                 }
                 else{
                     myref.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            if(dataSnapshot.child("Users").hasChild(searchpat.getText().toString())){
-                                name.setText(dataSnapshot.child("Users").child(searchpat.getText().toString()).child("name").getValue()
-                                .toString());
+                            if(dataSnapshot.child("Users").hasChild(mblnum.getText().toString())){
+                                name.setText(dataSnapshot.child("Users").child(mblnum.getText().toString()).child("name")
+                                .getValue().toString());
 
-                                email.setText(dataSnapshot.child("Users").child(searchpat.getText().toString()).child("email").getValue()
-                                        .toString());
+                                email.setText(dataSnapshot.child("Users").child(mblnum.getText().toString()).child("email")
+                                        .getValue().toString());
 
-                                mobile.setText(dataSnapshot.child("Users").child(searchpat.getText().toString()).child("mobile number").getValue()
-                                        .toString());
+                                mobilenumber.setText(dataSnapshot.child("Users").child(mblnum.getText().toString()).child("mobile number")
+                                        .getValue().toString());
+
+                                prescription.setText("Medicine : " +
+                                        dataSnapshot.child("Users").child(mblnum.getText().toString()).child("prescription")
+                                        .child("2018-01-10").child("medicines").getValue().toString() + "\n" +"Dozes : "
+                                        + dataSnapshot.child("Users").child(mblnum.getText().toString()).child("prescription")
+                                        .child("2018-01-10").child("dozes").getValue().toString() +"\n"+"Comments : " +
+                                        dataSnapshot.child("Users").child(mblnum.getText().toString()).child("prescription")
+                                                .child("2018-01-10").child("comments").getValue().toString());
                             }
                             else{
                                 Toast.makeText(ViewPatient.this,"User not found",Toast.LENGTH_SHORT).show();
@@ -65,14 +72,9 @@ public class ViewPatient extends AppCompatActivity {
 
                         }
                     });
-
-
-
                 }
-
             }
         });
-
 
     }
 }
